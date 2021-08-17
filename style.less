@@ -13,12 +13,25 @@ body {
   font-family: sans-serif;
 }
 
+section {
+  height: 1500px;
+  padding: 50px;
+}
+
+#app {
+  margin-top: var(--menu-height);
+}
+
 .top-menu {
   background: #fff;
   width: 100%;
   height: var(--menu-height);
   display: flex;
   align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
 
   svg {
     padding: 0 15px;
@@ -33,6 +46,10 @@ body {
   height: 100vh;
   animation: menu-close 0.5s;
 
+  position: fixed;
+  top: var(--menu-height);
+  left: 0;
+
   ul {
     visibility: hidden;
     opacity: 0;
@@ -45,7 +62,7 @@ body {
     li {
       color: var(--dark-blue);
       height: 65px;
-      border-top: 1px solid var(--opacity-dark-bluedark-blue);
+      border-top: 1px solid var(--opacity-dark-blue);
       padding: 0 15px;
 
       white-space: nowrap;
