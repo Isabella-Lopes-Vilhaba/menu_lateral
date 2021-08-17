@@ -20,7 +20,18 @@ section {
 
 #app {
   margin-top: var(--menu-height);
+  // Para empurrar o conteúdo para o lado quando abrir
+  // display: flex;
+  // height: 100vh;
+  // overflow: hidden;
 }
+
+// Para empurrar o conteúdo para o lado quando abrir
+// .container {
+//   height: 100%;
+//   width: 100%;
+//   overflow: auto;
+// }
 
 .top-menu {
   background: #fff;
@@ -44,8 +55,9 @@ section {
   background: #fff;
   width: 0;
   height: 100vh;
-  animation: menu-close 0.5s;
+  transition: width 0.5s;
 
+  // Tira para empurrar o conteúdo para o lado quando abrir
   position: fixed;
   top: var(--menu-height);
   left: 0;
@@ -85,8 +97,8 @@ section {
   }
 
   &.active {
-    animation: menu-open 0.5s;
-    width: 250px;
+    transition: width 0.5s;
+    width: 350px;
 
     ul {
       visibility: visible;
@@ -96,18 +108,15 @@ section {
   }
 }
 
-@keyframes menu-open {
-  from {
-    width: 0;
-  } to {
-    width: 250px;
-  }
-}
+// Para empurrar o conteúdo para o lado quando abrir
+// @media (max-width: 480px) {
+//   .lateral-menu {
+//     position: fixed;
+//     top: var(--menu-height);
+//     left: 0;
 
-@keyframes menu-close {
-  from {
-    width: 250px;
-  } to {
-    width: 0;
-  }
-}
+//     &.active {
+//       width: 90%;
+//     }
+//   }
+// }
